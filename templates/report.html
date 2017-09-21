@@ -1,0 +1,126 @@
+
+{% extends "template.html" %}
+
+{% block content %}
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <style>
+
+  /*td.block
+  {
+  border: 1px solid black;
+  }*/
+
+  table {
+
+    border-collapse: collapse;
+    /*width: 100%;*/
+    table-layout: auto;
+    width: 100%;
+  }
+
+  table td {
+    border: 1px solid #000000;
+  }
+
+  table .absorbing-column {
+    width: 100%;
+  }
+
+
+  td, th {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  th {
+    background-color: #adadad;
+    border: 1px solid #000000;
+  }
+
+  .title {
+
+    white-space: nowrap;
+    color: black;
+    font-family: 'Droid Serif';
+    border-bottom: 3px solid #E65634;
+    border-top: 3px solid #E65634;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 60px;
+    margin: 0 auto 45px;
+    max-width: 600px;
+    padding: 45px 0;
+  }
+
+  .population {
+    white-space: nowrap;
+    text-align: left;
+    color: black;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 36px;
+    margin: 0 auto 36px;
+    max-width: 400px;
+  }
+
+  </style>
+</head>
+</br>
+<div class="jumbotron container">
+
+  <div  style = " max-width: 35% !important;">
+    <div  style= "padding-bottom: 20px; padding-top: 25px; margin-top: 50px !important; margin: 0 auto; max-width: 50%;">
+
+      <div class="title"> {{ title }}  </div>
+
+      <br></br>
+
+      <div class="population">{{ population }} </div>
+
+    </div>
+  </div>
+
+  </br>
+  </br>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th> Service name </th>
+        <th> Annual dollar for each service </th>
+        <th> Total clients served annually by this service </th>
+        <th> Impact from this service </th>
+        <th class="absorbin-column"> How likely would this outcome have happened without your organization </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for item in table %}
+      <tr>
+        <td>{{item.serviceName}}</td>
+        <td>{{item.annualDollar}} </td>
+        <td>{{item.totalClients}} </td>
+        <td>{{item.Impact}} </td>
+        <td>{{item.percentage}}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+  </table>
+
+</div>
+
+
+{% endblock %}

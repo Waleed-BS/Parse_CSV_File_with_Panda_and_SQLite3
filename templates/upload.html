@@ -1,0 +1,93 @@
+{% extends "template.html" %}
+
+
+{% block content %}
+
+</br>
+
+<form action="./upload" method=post enctype=multipart/form-data>
+
+  <div class="container">
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">Organization</span>
+      <input name="title" placeholder="name of organization" type="text" class="form-control" aria-describedby="sizing-addon1">
+    </div>
+    </br>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon2" > Population &nbsp&nbsp </span>
+      <input name="population" placeholder="please briefly describe: e.g. homeless adults" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+    </br>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon2" > # of Services &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="numberofservices" placeholder="# of services" type="number" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Services Names ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 1 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service1" placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 2 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service2"  placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 3 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service3"  placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 4 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service4"  placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 5 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service5" placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon" id="sizing-addon2" > Service 6 &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+      <input name="service6" placeholder="name of service" type="text" class="form-control input-lg" aria-describedby="sizing-addon2">
+    </div>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  </div>
+
+  <div class = "container" style = " max-width: 35% !important; margin: 0 auto; ">
+    <div class = "jumbotron" style= "padding-bottom: 20px; padding-top: 25px; background-color:#FFAE5D; margin-top: 50px !important; margin: 0 auto; max-width: 50%;">
+
+      <img src = "/static/chart.jpg" width = "250" height = "200">
+
+      <div class="form-group">
+        </br>
+        <label for="exampleInputFile" style="font-size: 23px;">Upload The CSV File</label>
+        <input name=file type=file accept = ".csv"  style="font-size: 15px" class="form-control-file" aria-describedby="fileHelp">
+        <label for="exampleInputFile" style = "font-size: 16px">You can only upload 1 csv file.</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Generate</button>
+
+    </div>
+  </div>
+
+</form>
+
+{% endblock %}
+<!-- <form action = "" method = post>
+<dl>
+<dt>Username:
+<dd><input type = text name = username value = "{{
+request.form.username }}">
+<dt>Password:
+<dd><input type = password name = password>
+</dl>
+<input type = submit value = Login>
+<input type = submit value = Create User>
+</form> -->
